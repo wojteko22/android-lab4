@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    private val adapter: RecyclerView.Adapter<SongViewHolder> by lazy { SongsAdapter(/*this*/) }
+    private val adapter: RecyclerView.Adapter<SongViewHolder> by lazy { SongsAdapter(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
