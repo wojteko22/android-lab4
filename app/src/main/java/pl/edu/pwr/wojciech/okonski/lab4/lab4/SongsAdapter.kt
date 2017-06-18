@@ -14,7 +14,7 @@ class SongsAdapter(/*private val listener: OnItemClickListener*/) : RecyclerView
 
     override fun onBindViewHolder(holder: SongViewHolder, position: Int) {
         val song = songs[position]
-        holder.title.text = song.title
+        holder.setSongInfo(song)
     }
 
     override fun getItemCount(): Int {

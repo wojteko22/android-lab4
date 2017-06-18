@@ -16,6 +16,11 @@ class SongViewHolder(view: View/*, listener: OnItemClickListener*/) : RecyclerVi
             consume { listener.onItemLongClick(adapterPosition) }
         }*/
     }
+
+    fun setSongInfo(song: Song) {
+        title.text = song.title
+        albumCover.setImageResource(song.coverResource)
+    }
 }
 
 inline fun consume(f: () -> Unit): Boolean {
