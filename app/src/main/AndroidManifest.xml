@@ -19,7 +19,6 @@
         <activity
             android:name=".SongActivity"
             android:parentActivityName=".MainActivity"
-            android:label="@string/title_activity_song"
             android:theme="@style/AppTheme.NoActionBar" />
 
     </application>

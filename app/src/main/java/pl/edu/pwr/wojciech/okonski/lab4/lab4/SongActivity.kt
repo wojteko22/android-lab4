@@ -20,8 +20,12 @@ class SongActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_song)
+        prepareActionBar()
         prepareSongStuff()
+    }
 
+    private fun prepareActionBar() {
+        toolbar.title = song.title
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
@@ -75,8 +79,7 @@ class SongActivity : AppCompatActivity() {
         seekBar.postDelayed({ autoUpdateSeekBarIfMediaPlayerNotReleased() }, 200)
     }
 
-
-    override fun onStop() {
+    override fun onDestroy() {
         super.onStop()
         mediaPlayer.release()
         mediaPlayerReleased = true
@@ -86,7 +89,6 @@ class SongActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
         pause()
         outState.putInt("possition", mediaPlayer.currentPosition)
-
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
