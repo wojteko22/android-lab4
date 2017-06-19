@@ -27,14 +27,26 @@ class SongActivity : AppCompatActivity() {
         ibPlayPause.setOnClickListener { playOrPause() }
         seekBar.max = mediaPlayer.duration
 
+        autoUpdateSeekBar()
+        updateAudioAfterUserSeekBarAction()
+    }
+
+    private fun autoUpdateSeekBar() {
         val handler = Handler()
         runOnUiThread(object : Runnable {
             override fun run() {
-                val currentPosition = mediaPlayer.currentPosition / 1000
+                val currentPosition = mediaPlayer.currentPosition
                 seekBar.progress = currentPosition
                 handler.postDelayed(this, 1000)
             }
         })
+    }
+
+    private fun updateAudioAfterUserSeekBarAction() {
+        seekBar.setOnProgressChangeListener { progress, fromUser ->
+            if (fromUser)
+                mediaPlayer.seekTo(progress)
+        }
     }
 
     private fun playOrPause() {
