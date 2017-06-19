@@ -16,7 +16,8 @@
         android:contentDescription="@string/album_cover"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/colorAccent"/>
 
     <TextView
         android:id="@+id/tvTitle"
