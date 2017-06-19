@@ -6,6 +6,7 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_song.*
+import kotlinx.android.synthetic.main.content_song.*
 
 
 class SongActivity : AppCompatActivity() {
@@ -20,6 +21,9 @@ class SongActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_song)
         prepareSongStuff()
+
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun prepareSongStuff() {
@@ -76,6 +80,19 @@ class SongActivity : AppCompatActivity() {
         super.onStop()
         mediaPlayer.release()
         mediaPlayerReleased = true
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        pause()
+        outState.putInt("possition", mediaPlayer.currentPosition)
+
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        val position = savedInstanceState.getInt("possition")
+        mediaPlayer.seekTo(position)
     }
 
     companion object {
