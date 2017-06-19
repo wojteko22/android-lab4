@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
 }
 
 val songs = arrayListOf(
-        Song("The Messenger", R.drawable.ats),
-        Song("Pancerz", R.drawable.kielbie),
-        Song("Kiedy Umieram", R.drawable.medeis),
-        Song("I Hate Everything About You", R.drawable.tdg)
+        Song("The Messenger", R.drawable.ats, R.raw.the_messenger),
+        Song("Pancerz", R.drawable.kielbie, R.raw.pancerz),
+        Song("Kiedy Umieram", R.drawable.medeis, R.raw.kiedy_umieram),
+        Song("I Hate Everything About You", R.drawable.tdg, R.raw.i_hate_everything_about_you)
 )

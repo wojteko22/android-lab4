@@ -2,9 +2,11 @@ package pl.edu.pwr.wojciech.okonski.lab4.lab4
 
 import android.content.Context
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_song.*
+
 
 class SongActivity : AppCompatActivity() {
 
@@ -16,6 +18,9 @@ class SongActivity : AppCompatActivity() {
         val song = songs[songIndex]
         val coverResource = song.coverResource
         ivAlbumCover.setImageResource(coverResource)
+
+        val mediaPlayer = MediaPlayer.create(this, song.audioResource)
+        mediaPlayer.start()
     }
 
 
