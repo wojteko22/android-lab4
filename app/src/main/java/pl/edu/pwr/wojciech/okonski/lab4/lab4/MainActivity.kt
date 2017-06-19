@@ -28,5 +28,6 @@ val songs = arrayListOf(
         Song("The Messenger", R.drawable.ats, R.raw.the_messenger),
         Song("Pancerz", R.drawable.kielbie, R.raw.pancerz),
         Song("Kiedy Umieram", R.drawable.medeis, R.raw.kiedy_umieram),
-        Song("I Hate Everything About You", R.drawable.tdg, R.raw.i_hate_everything_about_you)
+        Song("I Hate Everything About You", R.drawable.tdg, R.raw.i_hate_everything_about_you),
+        Song("Can You Feel My Heart", R.drawable.sempiternal, R.raw.can_you_feel_my_heart)
 )

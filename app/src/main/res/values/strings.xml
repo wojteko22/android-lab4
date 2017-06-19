@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Lab4</string>
     <string name="album_cover">Album cover</string>
+    <string name="play_or_pause_button">play or pause button</string>
+    <string name="forward_button">forward button</string>
+    <string name="backwards_button">backwards button</string>
 </resources>
